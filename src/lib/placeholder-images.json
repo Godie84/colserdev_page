@@ -8,9 +8,9 @@
     },
     {
       "id": "hero-mockup",
-      "description": "Interfaz de software moderna e inteligente",
-      "imageUrl": "https://picsum.photos/seed/colser-dashboard/1200/800",
-      "imageHint": "software dashboard"
+      "description": "Banner principal de ColserDev",
+      "imageUrl": "/images/banner.png",
+      "imageHint": "software banner"
     },
     {
       "id": "service-web",
