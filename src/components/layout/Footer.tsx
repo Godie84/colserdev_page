@@ -1,15 +1,27 @@
 import Link from "next/link"
-import { Rocket, Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
+import { PlaceHolderImages } from "@/lib/placeholder-images"
 
 export function Footer() {
+  const logoData = PlaceHolderImages.find(img => img.id === "app-logo")
+
   return (
     <footer className="bg-foreground text-background py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="bg-primary p-2 rounded-lg">
-                <Rocket className="w-6 h-6 text-white" />
+              <div className="relative w-10 h-10 bg-primary p-2 rounded-lg">
+                {logoData && (
+                  <Image 
+                    src={logoData.imageUrl} 
+                    alt="Logo" 
+                    fill 
+                    className="object-contain p-1"
+                    data-ai-hint={logoData.imageHint}
+                  />
+                )}
               </div>
               <span className="text-2xl font-bold tracking-tight text-white">
                 Colser<span className="text-primary">Dev</span>

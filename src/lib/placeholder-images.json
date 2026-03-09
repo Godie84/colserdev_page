@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "app-logo",
+      "description": "ColserDev Pro Logo",
+      "imageUrl": "https://picsum.photos/seed/colser-logo/200/200",
+      "imageHint": "tech logo icon"
+    },
+    {
       "id": "hero-image",
       "description": "Modern web development team working on high-tech solutions",
       "imageUrl": "https://picsum.photos/seed/colser-hero/1200/800",
