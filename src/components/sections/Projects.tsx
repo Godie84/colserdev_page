@@ -1,77 +1,134 @@
+
+"use client"
+
+import * as React from "react"
 import Image from "next/image"
+import { Search } from "lucide-react"
 import { PlaceHolderImages } from "@/lib/placeholder-images"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+
+const categories = [
+  { id: "all", name: "Todos" },
+  { id: "web", name: "Aplicación Web" },
+  { id: "ecommerce", name: "E-commerce" },
+  { id: "mobile", name: "App Móvil" },
+]
 
 const projects = [
   {
     id: "project-1",
-    title: "Nexus Commerce",
-    category: "E-Commerce",
-    tags: ["Next.js", "Firebase", "Stripe"]
+    title: "SwiftPay Fintech Dashboard",
+    category: "web",
+    categoryName: "WEB APPLICATION",
+    description: "Una herramienta integral de gestión financiera con visualización de datos en tiempo real y procesamiento de pagos seguros.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"]
   },
   {
     id: "project-2",
-    title: "Zenith Dashboard",
-    category: "Fintech",
-    tags: ["React", "TypeScript", "D3.js"]
+    title: "LuxeCart E-commerce",
+    category: "ecommerce",
+    categoryName: "E-COMMERCE",
+    description: "Experiencia de compra de alta gama con checkout fluido, gestión de inventario y recomendaciones personalizadas.",
+    tags: ["React", "Node.js", "PostgreSQL", "Stripe"]
   },
   {
     id: "project-3",
-    title: "Stratus Cloud",
-    category: "Infrastructure",
-    tags: ["AWS", "Terraform", "Go"]
+    title: "VitalTrack Health Monitor",
+    category: "mobile",
+    categoryName: "MOBILE APP",
+    description: "Aplicación intuitiva de seguimiento de salud que se conecta con dispositivos vestibles para proporcionar información de bienestar.",
+    tags: ["React Native", "AWS Amplify", "Redux"]
   }
 ]
 
 export function Projects() {
+  const [activeCategory, setActiveCategory] = React.useState("all")
+  const [searchQuery, setSearchQuery] = React.useState("")
+
+  const filteredProjects = projects.filter((project) => {
+    const matchesCategory = activeCategory === "all" || project.category === activeCategory
+    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          project.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+    return matchesCategory && matchesSearch
+  })
+
   return (
-    <section id="projects" className="py-24 bg-muted/30">
+    <section id="projects" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="max-w-2xl">
-            <h2 className="text-base font-bold text-primary uppercase tracking-widest mb-4">Recent Projects</h2>
-            <h3 className="text-4xl lg:text-5xl font-bold text-foreground font-headline">Our Featured Portfolio</h3>
+        {/* Header and Filters */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-16">
+          <div className="max-w-xl">
+            <h2 className="text-4xl font-bold text-foreground mb-4 font-headline">
+              Proyectos Destacados
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Observa el impacto de nuestras transformaciones digitales.
+            </p>
           </div>
-          <p className="text-lg text-muted-foreground md:max-w-xs">
-            A glimpse into the successful partnerships and innovative solutions we've built.
-          </p>
+
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="relative w-full sm:w-64">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Input 
+                placeholder="Buscar tecnologías o proyectos..." 
+                className="pl-10 bg-muted/30 border-none rounded-full h-10"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+            <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 w-full sm:w-auto">
+              {categories.map((cat) => (
+                <Button
+                  key={cat.id}
+                  variant={activeCategory === cat.id ? "default" : "secondary"}
+                  size="sm"
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={cn(
+                    "rounded-full px-5 h-10 text-xs font-medium transition-all whitespace-nowrap",
+                    activeCategory === cat.id ? "bg-primary text-white" : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                  )}
+                >
+                  {cat.name}
+                </Button>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project) => {
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => {
             const imageData = PlaceHolderImages.find(img => img.id === project.id)
             return (
-              <Card key={project.id} className="group overflow-hidden border-none shadow-lg bg-card cursor-pointer">
-                <div className="relative aspect-[4/3] overflow-hidden">
+              <Card key={project.id} className="group overflow-hidden border border-border/40 shadow-sm bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 rounded-2xl">
+                <div className="relative aspect-video overflow-hidden">
                   {imageData && (
                     <Image
                       src={imageData.imageUrl}
                       alt={imageData.description}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       data-ai-hint={imageData.imageHint}
                     />
                   )}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="text-white text-lg font-semibold border-2 border-white px-6 py-2 rounded-full">
-                      View Project
-                    </div>
-                  </div>
                 </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 font-semibold border-none">
-                      {project.category}
-                    </Badge>
+                <CardContent className="p-7">
+                  <div className="text-[10px] font-bold tracking-[0.15em] text-primary mb-3 uppercase">
+                    {project.categoryName}
                   </div>
-                  <h4 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                  <h4 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h4>
+                  <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
-                      <span key={tag} className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
-                        #{tag}
+                      <span key={tag} className="text-[10px] font-semibold text-muted-foreground bg-muted/40 border border-border/50 px-3 py-1 rounded-full">
+                        {tag}
                       </span>
                     ))}
                   </div>
@@ -80,6 +137,12 @@ export function Projects() {
             )
           })}
         </div>
+
+        {filteredProjects.length === 0 && (
+          <div className="py-20 text-center">
+            <p className="text-muted-foreground">No se encontraron proyectos con esos criterios.</p>
+          </div>
+        )}
       </div>
     </section>
   )
