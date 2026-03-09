@@ -69,18 +69,22 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>contacto@colserdev.com</span>
+                <a href="mailto:info@colserdev.com" className="hover:text-primary transition-colors">
+                  info@colserdev.com
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>+1 (555) COLSER-DEV</span>
+                <a href="tel:+573054223590" className="hover:text-primary transition-colors">
+                  +57 305 422 3590
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-muted-foreground/20 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} ColserDev. Todos los derechos reservados.</p>
+          <p>© 2024 ColserDev. Todos los derechos reservados.</p>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-primary transition-colors">Términos de Uso</Link>
             <Link href="#" className="hover:text-primary transition-colors">Cookies</Link>
