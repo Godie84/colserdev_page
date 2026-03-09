@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "app-logo",
-      "description": "Logotipo de ColserDev Pro",
-      "imageUrl": "https://picsum.photos/seed/colser-logo-v2/200/200",
-      "imageHint": "modern tech logo icon"
+      "description": "Logotipo oficial de ColserDev Pro",
+      "imageUrl": "/Logotipo_colserdev.png",
+      "imageHint": "company logo"
     },
     {
       "id": "hero-image",
