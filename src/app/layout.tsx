@@ -1,5 +1,4 @@
-
-import type {Metadata} from 'next';
+import type {Metadata, Viewport} from 'next';
 import './globals.css';
 import { WhatsAppButton } from '@/components/ui/whatsapp-button';
 
@@ -9,7 +8,6 @@ export const metadata: Metadata = {
   description: 'En ColserDev diseñamos y construimos software inteligente, aplicaciones móviles y soluciones cloud a medida para empresas visionarias. Transformamos tecnología en resultados.',
   keywords: ['Desarrollo de Software', 'ColserDev', 'Ingeniería Web', 'Apps Móviles', 'Cloud Computing', 'IA', 'Latinoamérica'],
   authors: [{ name: 'ColserDev' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   alternates: {
     canonical: 'https://www.colserdev.com',
@@ -22,6 +20,11 @@ export const metadata: Metadata = {
     description: 'Soluciones digitales de alto impacto para empresas visionarias.',
     siteName: 'ColserDev',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({

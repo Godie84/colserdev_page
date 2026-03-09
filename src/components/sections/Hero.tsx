@@ -1,4 +1,3 @@
-
 "use client"
 
 import Image from "next/image"
@@ -52,7 +51,6 @@ export function Hero() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 data-ai-hint={mockupData.imageHint}
                 priority
-                quality={90}
               />
             )}
             {/* Glossy overlay effect */}

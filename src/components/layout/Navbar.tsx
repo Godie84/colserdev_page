@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -46,6 +45,7 @@ export function Navbar() {
                 src={logoData.imageUrl} 
                 alt="Logo ColserDev" 
                 fill 
+                sizes="32px"
                 className="object-contain"
                 priority
               />

@@ -18,6 +18,7 @@ export function Footer() {
                     src={logoData.imageUrl} 
                     alt="Logo ColserDev" 
                     fill 
+                    sizes="40px"
                     className="object-contain p-1"
                   />
                 )}
