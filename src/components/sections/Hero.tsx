@@ -37,18 +37,19 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Software Mockup Visual */}
+        {/* Software Mockup Visual Optimizado */}
         <div className="relative mt-12 mx-auto max-w-5xl group animate-float">
-          <div className="relative z-10 rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-card">
+          <div className="relative z-10 rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-card aspect-[16/10] sm:aspect-video">
             {mockupData && (
               <Image 
                 src={mockupData.imageUrl}
                 alt={mockupData.description}
-                width={1200}
-                height={800}
-                className="w-full h-auto object-cover"
+                fill
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 data-ai-hint={mockupData.imageHint}
                 priority
+                quality={90}
               />
             )}
             {/* Glossy overlay effect */}
@@ -56,7 +57,7 @@ export function Hero() {
           </div>
           
           {/* Decorative gradients behind mockup */}
-          <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/20 blur-[120px] rounded-full opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+          <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-primary/20 blur-[100px] rounded-full opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
           
           {/* Subtle reflection border */}
           <div className="absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent blur-sm" />
