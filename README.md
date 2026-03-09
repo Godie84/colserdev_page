@@ -10,7 +10,7 @@ Sigue estos pasos para sincronizar este código con tu repositorio y activar el 
 Ejecuta estos comandos en tu terminal local (dentro de la carpeta del proyecto):
 
 ```bash
-# 1. Inicializar el repositorio (si no lo has hecho)
+# 1. Inicializar el repositorio
 git init
 
 # 2. Agregar el repositorio remoto oficial de ColserDev
@@ -23,6 +23,7 @@ git add .
 git commit -m "Lanzamiento oficial ColserDev v1.0.0"
 
 # 5. Subir a la rama principal
+git branch -M main
 git push -u origin main
 ```
 
