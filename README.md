@@ -1,20 +1,22 @@
+# ColserDev - Ingeniería de Software Profesional v1.0.0
 
-# ColserDev - Ingeniería de Software Profesional
+Este es el proyecto oficial de **ColserDev**, una plataforma diseñada para mostrar servicios de ingeniería de software de alto impacto, construida con Next.js 15, React 19, Tailwind CSS y Genkit para funcionalidades de IA avanzada.
 
-Este es el proyecto oficial de **ColserDev**, construido con Next.js, React, Tailwind CSS y Genkit para funcionalidades de IA.
-
-## Características Principales
-- **Arquitectura Moderna:** Basada en Next.js App Router.
-- **Identidad Visual:** Branding personalizado con logotipos y banners optimizados.
-- **Herramientas de IA:** Generador de ideas de contenido y optimizador SEO integrado con Google Gemini vía Genkit.
-- **Responsividad Total:** Diseño adaptado para móviles, tablets y escritorio.
+## Características de Producción
+- **Identidad Corporativa:** Logotipo y favicon personalizados implementados.
+- **Arquitectura de Alto Rendimiento:** Basada en Next.js App Router para una carga ultrarrápida.
+- **Herramientas de IA para Marketing:** Generador de ideas y optimizador SEO integrado con Google Gemini vía Genkit.
+- **Optimización de Conversión:** Hero dinámico con mockup de software y formularios de contacto integrados.
+- **SEO Ready:** Metadatos configurados para visibilidad máxima en buscadores.
 
 ## Despliegue
-El sitio está configurado para ejecutarse en **Firebase App Hosting**.
+El sitio está configurado para ejecutarse en **Firebase App Hosting**. La integración continua asegura que cada cambio se refleje en la infraestructura escalable de Google Cloud.
 
-## Rutas Importantes
-- `/`: Landing page principal.
-- `/admin/content-tool`: Herramientas de IA para el equipo de marketing.
+## Tecnologías Utilizadas
+- **Frontend:** React, Next.js, Shadcn UI, Tailwind CSS.
+- **IA:** Genkit (Google Gemini AI).
+- **Iconografía:** Lucide React.
+- **Hosting:** Firebase App Hosting.
 
 ---
-© 2024 ColserDev. Todos los derechos reservados.
+© 2024 ColserDev. Todos los derechos reservados. Lanzamiento oficial v1.0.0.
