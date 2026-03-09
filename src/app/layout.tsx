@@ -1,6 +1,7 @@
 
 import type {Metadata} from 'next';
 import './globals.css';
+import { WhatsAppButton } from '@/components/ui/whatsapp-button';
 
 export const metadata: Metadata = {
   title: 'ColserDev | Ingeniería de Software y Soluciones Digitales de Alto Impacto',
@@ -25,6 +26,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased selection:bg-primary selection:text-white bg-background text-foreground">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

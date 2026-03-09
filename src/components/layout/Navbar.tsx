@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -19,6 +20,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [scrolled, setScrolled] = React.useState(false)
   const logoData = PlaceHolderImages.find(img => img.id === "app-logo")
+  
+  const whatsappUrl = "https://wa.me/573054223590?text=Hola%20ColserDev%2C%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto."
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -64,8 +67,10 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button className="bg-primary hover:bg-primary/90 rounded-full px-6 shadow-lg shadow-primary/20">
-            Cotizar Proyecto
+          <Button asChild className="bg-primary hover:bg-primary/90 rounded-full px-6 shadow-lg shadow-primary/20">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Cotizar Proyecto
+            </a>
           </Button>
         </div>
 
@@ -96,8 +101,10 @@ export function Navbar() {
             {link.name}
           </Link>
         ))}
-        <Button className="w-full bg-primary hover:bg-primary/90 rounded-full py-6 text-lg">
-          Cotizar Proyecto
+        <Button asChild className="w-full bg-primary hover:bg-primary/90 rounded-full py-6 text-lg">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            Cotizar Proyecto
+          </a>
         </Button>
       </div>
     </nav>

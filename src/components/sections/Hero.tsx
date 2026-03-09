@@ -8,6 +8,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images"
 
 export function Hero() {
   const mockupData = PlaceHolderImages.find(img => img.id === "hero-mockup")
+  const whatsappUrl = "https://wa.me/573054223590?text=Hola%20ColserDev%2C%20vengo%20desde%20el%20sitio%20web%20y%20quiero%20iniciar%20un%20proyecto."
 
   return (
     <section className="relative pt-48 pb-16 overflow-hidden bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background">
@@ -27,12 +28,14 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="rounded-xl px-8 py-7 text-base bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30 group">
-              Inicia tu Proyecto
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Button asChild size="lg" className="rounded-xl px-8 py-7 text-base bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30 group cursor-pointer">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                Inicia tu Proyecto
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
-            <Button variant="outline" size="lg" className="rounded-xl px-8 py-7 text-base border-border bg-card hover:bg-muted transition-colors">
-              Ver Nuestro Trabajo
+            <Button asChild variant="outline" size="lg" className="rounded-xl px-8 py-7 text-base border-border bg-card hover:bg-muted transition-colors">
+              <a href="#projects">Ver Nuestro Trabajo</a>
             </Button>
           </div>
         </div>
