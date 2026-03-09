@@ -5,15 +5,14 @@ Este es el proyecto oficial de **ColserDev**, una plataforma diseñada para most
 ## Características de Producción
 - **Identidad Corporativa:** Logotipo y favicon personalizados implementados.
 - **Arquitectura de Alto Rendimiento:** Basada en Next.js App Router para una carga ultrarrápida.
-- **Optimización de Conversión:** Hero dinámico con mockup de software y formularios de contacto integrados.
-- **SEO Ready:** Metadatos configurados para visibilidad máxima en buscadores.
+- **Optimización de Conversión:** Hero dinámico con mockup de software y botones de WhatsApp integrados.
+- **SEO Ready:** Metadatos configurados para el dominio oficial [www.colserdev.com](https://www.colserdev.com).
 
 ## Despliegue
 El sitio está configurado para ejecutarse en **Firebase App Hosting**. La integración continua asegura que cada cambio se refleje en la infraestructura escalable de Google Cloud.
 
 ## Tecnologías Utilizadas
 - **Frontend:** React, Next.js, Shadcn UI, Tailwind CSS.
-- **IA:** Genkit (Google Gemini AI).
 - **Iconografía:** Lucide React.
 - **Hosting:** Firebase App Hosting.
 
