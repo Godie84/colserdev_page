@@ -8,9 +8,9 @@
     },
     {
       "id": "hero-mockup",
-      "description": "Banner principal de ColserDev",
+      "description": "Mockup de software premium de ColserDev",
       "imageUrl": "/images/banner.png",
-      "imageHint": "software banner"
+      "imageHint": "software dashboard interface"
     },
     {
       "id": "service-web",
