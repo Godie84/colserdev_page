@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
-  { name: "Team Tool", href: "/admin/content-tool" },
+  { name: "Servicios", href: "#services" },
+  { name: "Proyectos", href: "#projects" },
+  { name: "Testimonios", href: "#testimonials" },
+  { name: "Contacto", href: "#contact" },
+  { name: "Herramientas", href: "/admin/content-tool" },
 ]
 
 export function Navbar() {
@@ -30,16 +30,16 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm border-b" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-primary p-2 rounded-lg group-hover:rotate-12 transition-transform duration-300">
-            <Rocket className="w-6 h-6 text-white" />
+          <div className="text-primary group-hover:rotate-12 transition-transform duration-300">
+            <Rocket className="w-6 h-6" />
           </div>
           <span className="text-xl font-bold tracking-tight text-foreground">
-            Colser<span className="text-primary">Dev</span>
+            Colser<span className="text-primary">Dev</span>Pro
           </span>
         </Link>
 
@@ -55,7 +55,7 @@ export function Navbar() {
             </Link>
           ))}
           <Button className="bg-primary hover:bg-primary/90 rounded-full px-6 shadow-lg shadow-primary/20">
-            Get a Quote
+            Cotizar Proyecto
           </Button>
         </div>
 
@@ -87,7 +87,7 @@ export function Navbar() {
           </Link>
         ))}
         <Button className="w-full bg-primary hover:bg-primary/90 rounded-full py-6 text-lg">
-          Get a Quote
+          Cotizar Proyecto
         </Button>
       </div>
     </nav>

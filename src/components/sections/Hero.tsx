@@ -1,57 +1,48 @@
 "use client"
 
-import { Rocket, ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { PlaceHolderImages } from "@/lib/placeholder-images"
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === "hero-image")
-
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="z-10 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-semibold mb-6 animate-fade-in">
-            <Rocket className="w-4 h-4" />
-            Empowering Digital Innovation
-          </div>
-          <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight mb-6 font-headline">
-            Build Your Future <br />
-            With <span className="text-primary">ColserDev</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            We transform complex challenges into elegant digital solutions. From custom software to innovative web platforms, we help your business reach new heights.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <Button size="lg" className="rounded-full px-8 py-7 text-lg bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30 group">
-              Start Your Project
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-8 py-7 text-lg border-primary/20 text-primary hover:bg-primary/5">
-              View Our Work
-            </Button>
-          </div>
+    <section className="relative pt-48 pb-32 overflow-hidden bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="inline-flex items-center gap-1 px-4 py-1.5 bg-primary/5 border border-primary/20 rounded-full text-primary text-xs font-medium mb-12 animate-fade-in cursor-default hover:bg-primary/10 transition-colors">
+          Liderando el Futuro Digital
+          <ChevronRight className="w-3 h-3" />
+        </div>
+        
+        <h1 className="text-5xl lg:text-7xl font-bold text-[#1e293b] leading-[1.1] mb-8 font-headline tracking-tight">
+          Construimos Software <span className="text-primary">Inteligente</span> para Empresas Modernas
+        </h1>
+        
+        <p className="text-lg lg:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+          ColserDev es tu socio dedicado para el desarrollo web de alto rendimiento, soluciones móviles y computación en la nube. Escalemos tu visión con ingeniería experta.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
+          <Button size="lg" className="rounded-xl px-8 py-7 text-base bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30 group">
+            Inicia tu Proyecto
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+          <Button variant="outline" size="lg" className="rounded-xl px-8 py-7 text-base border-border bg-card hover:bg-muted transition-colors">
+            Ver Nuestro Trabajo
+          </Button>
         </div>
 
-        <div className="relative z-0 flex justify-center lg:justify-end group">
-          <div className="relative w-full max-w-[600px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-            {heroImage && (
-              <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover"
-                priority
-                data-ai-hint={heroImage.imageHint}
-              />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-border/50 max-w-3xl mx-auto opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex items-center justify-center font-bold text-xs tracking-[0.2em] text-foreground/60 uppercase">
+            Techstars
           </div>
-          
-          {/* Decorative floating elements */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/30 rounded-full blur-3xl animate-float" />
-          <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+          <div className="flex items-center justify-center font-bold text-xs tracking-[0.2em] text-foreground/60 uppercase">
+            Socio Microsoft
+          </div>
+          <div className="flex items-center justify-center font-bold text-xs tracking-[0.2em] text-foreground/60 uppercase">
+            AWS Certified
+          </div>
+          <div className="flex items-center justify-center font-bold text-xs tracking-[0.2em] text-foreground/60 uppercase">
+            Expertos React
+          </div>
         </div>
       </div>
     </section>
