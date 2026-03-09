@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useForm } from "react-hook-form"
@@ -19,10 +20,10 @@ import { useToast } from "@/hooks/use-toast"
 import { Send } from "lucide-react"
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  projectType: z.string().min(1, "Please select a project type"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
+  email: z.string().email("Dirección de correo electrónico no válida"),
+  projectType: z.string().min(1, "Por favor selecciona un tipo de proyecto"),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
 })
 
 export function ContactForm() {
@@ -40,8 +41,8 @@ export function ContactForm() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
     toast({
-      title: "Success!",
-      description: "Your inquiry has been sent. We'll be in touch soon.",
+      title: "¡Éxito!",
+      description: "Tu consulta ha sido enviada. Nos pondremos en contacto pronto.",
     })
     form.reset()
   }
@@ -51,10 +52,10 @@ export function ContactForm() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="text-base font-bold text-primary uppercase tracking-widest mb-4">Contact Us</h2>
-            <h3 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 font-headline">Ready to Start Your Journey?</h3>
+            <h2 className="text-base font-bold text-primary uppercase tracking-widest mb-4">Contáctanos</h2>
+            <h3 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 font-headline">¿Listo para Iniciar tu Proyecto?</h3>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Have a visionary idea? We're here to help you build it. Fill out the form and our team will get back to you within 24 hours.
+              ¿Tienes una idea visionaria? Estamos aquí para ayudarte a construirla. Completa el formulario y nuestro equipo se pondrá en contacto contigo en menos de 24 horas.
             </p>
             
             <div className="space-y-6">
@@ -63,8 +64,8 @@ export function ContactForm() {
                   01
                 </div>
                 <div>
-                  <h5 className="font-bold text-foreground">Discovery Call</h5>
-                  <p className="text-muted-foreground">We understand your requirements and goals.</p>
+                  <h5 className="font-bold text-foreground">Llamada de Descubrimiento</h5>
+                  <p className="text-muted-foreground">Entendemos tus requisitos y objetivos de negocio.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -72,8 +73,8 @@ export function ContactForm() {
                   02
                 </div>
                 <div>
-                  <h5 className="font-bold text-foreground">Proposal & Roadmap</h5>
-                  <p className="text-muted-foreground">We provide a detailed plan and budget.</p>
+                  <h5 className="font-bold text-foreground">Propuesta y Hoja de Ruta</h5>
+                  <p className="text-muted-foreground">Proporcionamos un plan detallado y un presupuesto transparente.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -81,8 +82,8 @@ export function ContactForm() {
                   03
                 </div>
                 <div>
-                  <h5 className="font-bold text-foreground">Development</h5>
-                  <p className="text-muted-foreground">Agile development with regular updates.</p>
+                  <h5 className="font-bold text-foreground">Desarrollo Ágil</h5>
+                  <p className="text-muted-foreground">Construcción iterativa con actualizaciones constantes del progreso.</p>
                 </div>
               </div>
             </div>
@@ -97,9 +98,9 @@ export function ContactForm() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel>Nombre</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} className="bg-muted/50" />
+                          <Input placeholder="Juan Pérez" {...field} className="bg-muted/50" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -110,9 +111,9 @@ export function ContactForm() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>Correo Electrónico</FormLabel>
                         <FormControl>
-                          <Input placeholder="john@example.com" {...field} className="bg-muted/50" />
+                          <Input placeholder="juan@ejemplo.com" {...field} className="bg-muted/50" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -125,18 +126,18 @@ export function ContactForm() {
                   name="projectType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Project Type</FormLabel>
+                      <FormLabel>Tipo de Proyecto</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="bg-muted/50">
-                            <SelectValue placeholder="Select service" />
+                            <SelectValue placeholder="Selecciona un servicio" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="web">Web Development</SelectItem>
-                          <SelectItem value="mobile">Mobile App</SelectItem>
-                          <SelectItem value="software">Custom Software</SelectItem>
-                          <SelectItem value="cloud">Cloud / Infrastructure</SelectItem>
+                          <SelectItem value="web">Desarrollo Web</SelectItem>
+                          <SelectItem value="mobile">App Móvil</SelectItem>
+                          <SelectItem value="software">Software a Medida</SelectItem>
+                          <SelectItem value="cloud">Nube / Infraestructura</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -149,10 +150,10 @@ export function ContactForm() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Tell us about your project</FormLabel>
+                      <FormLabel>Cuéntanos sobre tu proyecto</FormLabel>
                       <FormControl>
                         <Textarea 
-                          placeholder="Project goals, timeline, specific requirements..." 
+                          placeholder="Objetivos del proyecto, plazos, requisitos específicos..." 
                           className="min-h-[120px] bg-muted/50"
                           {...field} 
                         />
@@ -163,7 +164,7 @@ export function ContactForm() {
                 />
 
                 <Button type="submit" className="w-full py-7 text-lg bg-primary hover:bg-primary/90 rounded-xl shadow-lg shadow-primary/20 group">
-                  Submit Inquiry
+                  Enviar Consulta
                   <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Button>
               </form>
