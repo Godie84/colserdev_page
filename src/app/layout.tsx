@@ -4,9 +4,6 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'ColserDev Pro | Soluciones Web Profesionales',
   description: 'ColserDev Pro - Software a medida, Desarrollo Web y Móvil con soluciones innovadoras impulsadas por IA.',
-  icons: {
-    icon: 'https://picsum.photos/seed/colser-logo-v2/32/32',
-  },
 };
 
 export default function RootLayout({
