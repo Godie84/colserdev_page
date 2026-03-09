@@ -32,7 +32,7 @@ import { useToast } from "@/hooks/use-toast"
 import { Navbar } from "@/components/layout/Navbar"
 
 const ideaSchema = z.object({
-  topic: z.string().min(3, "Topic is too short"),
+  topic: z.string().min(3, "El tema es demasiado corto"),
   contentType: z.enum(["service description", "blog post"]),
   tone: z.enum(["professional", "innovative", "friendly", "authoritative", "marketing"]),
   targetAudience: z.string().optional(),
@@ -41,7 +41,7 @@ const ideaSchema = z.object({
 const seoSchema = z.object({
   pageType: z.enum(["homepage", "service page", "blog post", "other"]),
   existingContent: z.string().optional(),
-  keyTopics: z.string().optional().describe("Comma separated topics"),
+  keyTopics: z.string().optional().describe("Temas separados por comas"),
 })
 
 export default function ContentToolPage() {
@@ -77,9 +77,9 @@ export default function ContentToolPage() {
         keywords: values.topic.split(" "),
       })
       setIdeas(result)
-      toast({ title: "Ideas Generated", description: "Successfully created 3 content drafts." })
+      toast({ title: "Ideas Generadas", description: "Se han creado borradores de contenido con éxito." })
     } catch (error) {
-      toast({ title: "Error", description: "Failed to generate ideas. Please try again.", variant: "destructive" })
+      toast({ title: "Error", description: "Error al generar ideas. Inténtalo de nuevo.", variant: "destructive" })
     } finally {
       setLoading(false)
     }
@@ -94,9 +94,9 @@ export default function ContentToolPage() {
         keyTopics: values.keyTopics ? values.keyTopics.split(",").map(t => t.trim()) : undefined,
       })
       setSeo(result)
-      toast({ title: "SEO Optimized", description: "Meta tags generated successfully." })
+      toast({ title: "SEO Optimizado", description: "Meta etiquetas generadas con éxito." })
     } catch (error) {
-      toast({ title: "Error", description: "Failed to optimize SEO. Please check your inputs.", variant: "destructive" })
+      toast({ title: "Error", description: "Error al optimizar SEO. Revisa tus datos.", variant: "destructive" })
     } finally {
       setLoading(false)
     }
@@ -104,20 +104,20 @@ export default function ContentToolPage() {
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text)
-    toast({ title: "Copied!", description: "Content copied to clipboard." })
+    toast({ title: "¡Copiado!", description: "Contenido copiado al portapapeles." })
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4 flex items-center gap-3">
             <Sparkles className="text-primary w-8 h-8" />
-            ColserDev Team AI Tool
+            Herramientas IA de ColserDev
           </h1>
           <p className="text-muted-foreground text-lg">
-            Accelerate content creation and maintain messaging consistency with our custom AI flows.
+            Acelera la creación de contenido y mantén la consistencia de tus mensajes con nuestros flujos de IA personalizados.
           </p>
         </div>
 
@@ -125,11 +125,11 @@ export default function ContentToolPage() {
           <TabsList className="bg-muted p-1">
             <TabsTrigger value="ideas" className="px-8 flex gap-2">
               <FileText className="w-4 h-4" />
-              Content Generator
+              Generador de Contenido
             </TabsTrigger>
             <TabsTrigger value="seo" className="px-8 flex gap-2">
               <Search className="w-4 h-4" />
-              SEO Optimizer
+              Optimizador SEO
             </TabsTrigger>
           </TabsList>
 
@@ -137,8 +137,8 @@ export default function ContentToolPage() {
             <div className="lg:col-span-1">
               <Card>
                 <CardHeader>
-                  <CardTitle>Generator Settings</CardTitle>
-                  <CardDescription>Configure your content generation parameters.</CardDescription>
+                  <CardTitle>Ajustes del Generador</CardTitle>
+                  <CardDescription>Configura los parámetros de generación.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Form {...ideaForm}>
@@ -148,9 +148,9 @@ export default function ContentToolPage() {
                         name="topic"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Main Topic</FormLabel>
+                            <FormLabel>Tema Principal</FormLabel>
                             <FormControl>
-                              <Input placeholder="e.g. Cloud Security for LATAM" {...field} />
+                              <Input placeholder="ej. Seguridad Cloud en LATAM" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -161,7 +161,7 @@ export default function ContentToolPage() {
                         name="contentType"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Content Type</FormLabel>
+                            <FormLabel>Tipo de Contenido</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
                                 <SelectTrigger>
@@ -169,8 +169,8 @@ export default function ContentToolPage() {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="service description">Service Description</SelectItem>
-                                <SelectItem value="blog post">Blog Post</SelectItem>
+                                <SelectItem value="service description">Descripción de Servicio</SelectItem>
+                                <SelectItem value="blog post">Entrada de Blog</SelectItem>
                               </SelectContent>
                             </Select>
                             <FormMessage />
@@ -182,7 +182,7 @@ export default function ContentToolPage() {
                         name="tone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Tone</FormLabel>
+                            <FormLabel>Tono</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
                                 <SelectTrigger>
@@ -190,10 +190,10 @@ export default function ContentToolPage() {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="professional">Professional</SelectItem>
-                                <SelectItem value="innovative">Innovative</SelectItem>
-                                <SelectItem value="marketing">Marketing</SelectItem>
-                                <SelectItem value="authoritative">Authoritative</SelectItem>
+                                <SelectItem value="professional">Profesional</SelectItem>
+                                <SelectItem value="innovative">Innovador</SelectItem>
+                                <SelectItem value="marketing">Comercial</SelectItem>
+                                <SelectItem value="authoritative">Autoritario</SelectItem>
                               </SelectContent>
                             </Select>
                             <FormMessage />
@@ -202,7 +202,7 @@ export default function ContentToolPage() {
                       />
                       <Button type="submit" disabled={loading} className="w-full">
                         {loading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Sparkles className="w-4 h-4 mr-2" />}
-                        Generate Ideas
+                        Generar Ideas
                       </Button>
                     </form>
                   </Form>
@@ -214,7 +214,7 @@ export default function ContentToolPage() {
               {!ideas && !loading && (
                 <div className="h-full flex flex-col items-center justify-center p-12 border-2 border-dashed border-muted rounded-3xl text-muted-foreground bg-muted/20">
                   <FileText className="w-12 h-12 mb-4 opacity-20" />
-                  <p>Your generated content will appear here.</p>
+                  <p>Tu contenido generado aparecerá aquí.</p>
                 </div>
               )}
               {loading && (
@@ -252,8 +252,8 @@ export default function ContentToolPage() {
             <div className="lg:col-span-1">
               <Card>
                 <CardHeader>
-                  <CardTitle>SEO Input</CardTitle>
-                  <CardDescription>Enter details to generate optimized meta tags.</CardDescription>
+                  <CardTitle>Entrada SEO</CardTitle>
+                  <CardDescription>Ingresa detalles para generar meta etiquetas.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Form {...seoForm}>
@@ -263,7 +263,7 @@ export default function ContentToolPage() {
                         name="pageType"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Page Type</FormLabel>
+                            <FormLabel>Tipo de Página</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
                                 <SelectTrigger>
@@ -271,10 +271,10 @@ export default function ContentToolPage() {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="homepage">Homepage</SelectItem>
-                                <SelectItem value="service page">Service Page</SelectItem>
-                                <SelectItem value="blog post">Blog Post</SelectItem>
-                                <SelectItem value="other">Other</SelectItem>
+                                <SelectItem value="homepage">Inicio</SelectItem>
+                                <SelectItem value="service page">Servicio</SelectItem>
+                                <SelectItem value="blog post">Blog</SelectItem>
+                                <SelectItem value="other">Otro</SelectItem>
                               </SelectContent>
                             </Select>
                             <FormMessage />
@@ -286,11 +286,11 @@ export default function ContentToolPage() {
                         name="keyTopics"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Key Topics</FormLabel>
+                            <FormLabel>Temas Clave</FormLabel>
                             <FormControl>
                               <Input placeholder="software, latam, azure..." {...field} />
                             </FormControl>
-                            <FormDescription>Comma separated</FormDescription>
+                            <FormDescription>Separados por comas</FormDescription>
                             <FormMessage />
                           </FormItem>
                         )}
@@ -300,9 +300,9 @@ export default function ContentToolPage() {
                         name="existingContent"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Page Content (Optional)</FormLabel>
+                            <FormLabel>Contenido (Opcional)</FormLabel>
                             <FormControl>
-                              <Textarea placeholder="Paste page draft here..." {...field} />
+                              <Textarea placeholder="Pega el borrador aquí..." {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -310,7 +310,7 @@ export default function ContentToolPage() {
                       />
                       <Button type="submit" disabled={loading} className="w-full">
                         {loading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Search className="w-4 h-4 mr-2" />}
-                        Optimize SEO
+                        Optimizar SEO
                       </Button>
                     </form>
                   </Form>
@@ -325,7 +325,7 @@ export default function ContentToolPage() {
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
                         <CheckCircle2 className="text-emerald-500 w-5 h-5" />
-                        Generated SEO Meta Tags
+                        Meta Etiquetas Generadas
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-6">
@@ -333,32 +333,32 @@ export default function ContentToolPage() {
                         <div className="flex items-center justify-between">
                           <label className="text-xs font-bold uppercase text-muted-foreground tracking-widest">Meta Title</label>
                           <Button variant="ghost" size="sm" onClick={() => copyToClipboard(seo.metaTitle)} className="h-7">
-                            <Copy className="w-3 h-3 mr-1" /> Copy
+                            <Copy className="w-3 h-3 mr-1" /> Copiar
                           </Button>
                         </div>
                         <div className="p-4 bg-muted border rounded-lg font-medium">
                           {seo.metaTitle}
                         </div>
-                        <p className="text-xs text-muted-foreground text-right">{seo.metaTitle.length} characters (Optimal: 50-60)</p>
+                        <p className="text-xs text-muted-foreground text-right">{seo.metaTitle.length} caracteres (Óptimo: 50-60)</p>
                       </div>
 
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
                           <label className="text-xs font-bold uppercase text-muted-foreground tracking-widest">Meta Description</label>
                           <Button variant="ghost" size="sm" onClick={() => copyToClipboard(seo.metaDescription)} className="h-7">
-                            <Copy className="w-3 h-3 mr-1" /> Copy
+                            <Copy className="w-3 h-3 mr-1" /> Copiar
                           </Button>
                         </div>
                         <div className="p-4 bg-muted border rounded-lg leading-relaxed italic">
                           {seo.metaDescription}
                         </div>
-                        <p className="text-xs text-muted-foreground text-right">{seo.metaDescription.length} characters (Optimal: 150-160)</p>
+                        <p className="text-xs text-muted-foreground text-right">{seo.metaDescription.length} caracteres (Óptimo: 150-160)</p>
                       </div>
                     </CardContent>
                   </Card>
 
                   <div className="bg-primary/5 p-6 rounded-3xl border border-primary/10">
-                    <h5 className="font-bold text-primary mb-2">Google Preview</h5>
+                    <h5 className="font-bold text-primary mb-2">Vista Previa Google</h5>
                     <div className="space-y-1">
                       <div className="text-[#1a0dab] text-xl hover:underline cursor-pointer truncate">
                         {seo.metaTitle}
@@ -376,7 +376,7 @@ export default function ContentToolPage() {
               {!seo && !loading && (
                 <div className="h-full flex flex-col items-center justify-center p-12 border-2 border-dashed border-muted rounded-3xl text-muted-foreground bg-muted/20">
                   <Search className="w-12 h-12 mb-4 opacity-20" />
-                  <p>SEO recommendations will appear here.</p>
+                  <p>Las recomendaciones SEO aparecerán aquí.</p>
                 </div>
               )}
             </div>

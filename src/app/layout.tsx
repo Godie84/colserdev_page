@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ColserDev Pro | Professional Web Solutions',
-  description: 'ColserDev Pro - Custom Software, Web & Mobile Development with innovative AI-powered solutions.',
+  title: 'ColserDev Pro | Soluciones Web Profesionales',
+  description: 'ColserDev Pro - Software a medida, Desarrollo Web y Móvil con soluciones innovadoras impulsadas por IA.',
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
