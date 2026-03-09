@@ -4,10 +4,13 @@ Este es el proyecto oficial de **ColserDev**, una plataforma diseñada para most
 
 ## 🚀 Pasos para el Despliegue en Firebase App Hosting
 
-Para subir este código a tu repositorio, sigue estos pasos desde la **terminal de tu computadora local** (no dentro de Firebase Studio):
+Sigue estos pasos desde la **terminal de tu computadora local** (asegúrate de haber descargado el código de Firebase Studio primero):
 
 ### 1. Preparar y Subir el Código a GitHub
-Abre la carpeta del proyecto en tu terminal local y ejecuta:
+
+> **IMPORTANTE:** Primero, ve a [GitHub](https://github.com/new) y crea un nuevo repositorio llamado `colserdev_page`. No lo inicialices con README ni licencia (déjalo vacío).
+
+Luego, en tu terminal local, dentro de la carpeta del proyecto:
 
 ```bash
 # 1. Inicializar el repositorio git
@@ -16,7 +19,7 @@ git init
 # 2. Conectar con tu repositorio remoto
 git remote add origin https://github.com/Godie84/colserdev_page.git
 
-# 3. Preparar los archivos
+# 3. Preparar los archivos (el .gitignore omitirá lo innecesario)
 git add .
 
 # 4. Crear el commit de lanzamiento
@@ -48,8 +51,8 @@ Una vez que el despliegue termine:
 
 ## Características de Producción
 - **WhatsApp Business:** Integración total con el número +57 305 422 3590.
-- **SEO Ready:** Metadatos configurados para el dominio [www.colserdev.com](https://www.colserdev.com).
-- **Rendimiento:** Optimización de imágenes (Next/Image) y Viewport para Next.js 15.
+- **SEO Ready:** Metadatos optimizados para [www.colserdev.com](https://www.colserdev.com).
+- **Rendimiento:** Optimización de imágenes (Next/Image) con carga prioritaria.
 
 ---
 © 2024 ColserDev. Todos los derechos reservados.
