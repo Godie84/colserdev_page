@@ -2,75 +2,75 @@
   "placeholderImages": [
     {
       "id": "app-logo",
-      "description": "ColserDev Pro Logo",
-      "imageUrl": "https://picsum.photos/seed/colser-logo/200/200",
-      "imageHint": "tech logo icon"
+      "description": "Logotipo de ColserDev Pro",
+      "imageUrl": "https://picsum.photos/seed/colser-logo-v2/200/200",
+      "imageHint": "modern tech logo icon"
     },
     {
       "id": "hero-image",
-      "description": "Modern web development team working on high-tech solutions",
+      "description": "Equipo de desarrollo trabajando en soluciones tecnológicas",
       "imageUrl": "https://picsum.photos/seed/colser-hero/1200/800",
-      "imageHint": "web development high-tech"
+      "imageHint": "software engineering team"
     },
     {
       "id": "service-web",
-      "description": "Desarrollo web moderno con Next.js y React",
-      "imageUrl": "https://picsum.photos/seed/service-web/600/400",
-      "imageHint": "web development coding"
+      "description": "Desarrollo web moderno con Next.js",
+      "imageUrl": "https://picsum.photos/seed/service-web-dev/600/400",
+      "imageHint": "coding workspace"
     },
     {
       "id": "service-mobile",
-      "description": "Desarrollo de aplicaciones móviles iOS y Android",
-      "imageUrl": "https://picsum.photos/seed/service-mobile/600/400",
-      "imageHint": "mobile app development"
+      "description": "Apps móviles nativas",
+      "imageUrl": "https://picsum.photos/seed/service-mobile-dev/600/400",
+      "imageHint": "mobile application"
     },
     {
       "id": "service-cloud",
-      "description": "Infraestructura de computación en la nube",
-      "imageUrl": "https://picsum.photos/seed/service-cloud/600/400",
-      "imageHint": "cloud computing server"
+      "description": "Infraestructura en la nube",
+      "imageUrl": "https://picsum.photos/seed/service-cloud-dev/600/400",
+      "imageHint": "cloud server technology"
     },
     {
       "id": "service-ai",
-      "description": "Inteligencia artificial y aprendizaje automático",
-      "imageUrl": "https://picsum.photos/seed/service-ai/600/400",
-      "imageHint": "artificial intelligence machine learning"
+      "description": "Inteligencia Artificial avanzada",
+      "imageUrl": "https://picsum.photos/seed/service-ai-tech/600/400",
+      "imageHint": "artificial intelligence neural"
     },
     {
       "id": "project-1",
-      "description": "E-commerce platform interface design",
-      "imageUrl": "https://picsum.photos/seed/project1/800/600",
-      "imageHint": "ecommerce design"
+      "description": "Dashboard de Fintech",
+      "imageUrl": "https://picsum.photos/seed/project-fintech/800/600",
+      "imageHint": "financial dashboard ui"
     },
     {
       "id": "project-2",
-      "description": "Fintech mobile app dashboard",
-      "imageUrl": "https://picsum.photos/seed/project2/800/600",
-      "imageHint": "mobile dashboard"
+      "description": "Plataforma E-commerce",
+      "imageUrl": "https://picsum.photos/seed/project-ecommerce/800/600",
+      "imageHint": "online shopping platform"
     },
     {
       "id": "project-3",
-      "description": "Cloud computing infrastructure visualization",
-      "imageUrl": "https://picsum.photos/seed/project3/800/600",
-      "imageHint": "cloud tech"
+      "description": "Monitor de Salud VitalTrack",
+      "imageUrl": "https://picsum.photos/seed/project-health/800/600",
+      "imageHint": "medical health app"
     },
     {
       "id": "avatar-1",
-      "description": "Sarah Johnson portrait",
-      "imageUrl": "https://picsum.photos/seed/avatar1/100/100",
-      "imageHint": "business woman"
+      "description": "Retrato de Sarah Johnson",
+      "imageUrl": "https://picsum.photos/seed/sarah-j/100/100",
+      "imageHint": "professional woman"
     },
     {
       "id": "avatar-2",
-      "description": "Michael Chen portrait",
-      "imageUrl": "https://picsum.photos/seed/avatar2/100/100",
-      "imageHint": "business man"
+      "description": "Retrato de Michael Chen",
+      "imageUrl": "https://picsum.photos/seed/michael-c/100/100",
+      "imageHint": "business man portrait"
     },
     {
       "id": "avatar-3",
-      "description": "Elena Rodriguez portrait",
-      "imageUrl": "https://picsum.photos/seed/avatar3/100/100",
-      "imageHint": "woman entrepreneur"
+      "description": "Retrato de Elena Rodriguez",
+      "imageUrl": "https://picsum.photos/seed/elena-r/100/100",
+      "imageHint": "latina entrepreneur"
     }
   ]
 }
