@@ -13,7 +13,6 @@ const navLinks = [
   { name: "Proyectos", href: "#projects" },
   { name: "Testimonios", href: "#testimonials" },
   { name: "Contacto", href: "#contact" },
-  { name: "Herramientas", href: "/admin/content-tool" },
 ]
 
 export function Navbar() {

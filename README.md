@@ -5,7 +5,6 @@ Este es el proyecto oficial de **ColserDev**, una plataforma diseñada para most
 ## Características de Producción
 - **Identidad Corporativa:** Logotipo y favicon personalizados implementados.
 - **Arquitectura de Alto Rendimiento:** Basada en Next.js App Router para una carga ultrarrápida.
-- **Herramientas de IA para Marketing:** Generador de ideas y optimizador SEO integrado con Google Gemini vía Genkit.
 - **Optimización de Conversión:** Hero dinámico con mockup de software y formularios de contacto integrados.
 - **SEO Ready:** Metadatos configurados para visibilidad máxima en buscadores.
 
