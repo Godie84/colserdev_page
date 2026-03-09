@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ColserDev Pro | Soluciones Web Profesionales',
-  description: 'ColserDev Pro - Software a medida, Desarrollo Web y Móvil con soluciones innovadoras impulsadas por IA.',
+  title: 'ColserDev | Ingeniería de Software y Soluciones Digitales',
+  description: 'ColserDev - Expertos en desarrollo web, aplicaciones móviles y soluciones en la nube a medida. Transformamos tu visión en realidad tecnológica.',
 };
 
 export default function RootLayout({

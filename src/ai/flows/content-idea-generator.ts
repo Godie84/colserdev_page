@@ -2,10 +2,6 @@
 /**
  * @fileOverview A Genkit flow for generating diverse content ideas and initial drafts
  * for service descriptions or blog posts for ColserDev team members.
- *
- * - generateContentIdeas - A function that handles the content idea generation process.
- * - ContentIdeaGeneratorInput - The input type for the generateContentIdeas function.
- * - ContentIdeaGeneratorOutput - The return type for the generateContentIdeas function.
  */
 
 import {ai} from '@/ai/genkit';
@@ -13,17 +9,17 @@ import {z} from 'genkit';
 
 const ContentIdeaGeneratorInputSchema = z.object({
   topic: z.string().describe('The main topic or subject for the content idea.'),
-  contentType: z.enum(['service description', 'blog post']).describe('The type of content to generate ideas for (e.g., "service description" or "blog post").'),
+  contentType: z.enum(['service description', 'blog post']).describe('The type of content to generate ideas for.'),
   targetAudience: z.string().optional().describe('The intended audience for the content.'),
-  keywords: z.array(z.string()).optional().describe('A list of keywords to incorporate into the content ideas.'),
-  tone: z.enum(['professional', 'innovative', 'friendly', 'authoritative', 'marketing']).default('professional').describe('The desired tone for the content.'),
+  keywords: z.array(z.string()).optional().describe('Keywords to incorporate.'),
+  tone: z.enum(['professional', 'innovative', 'friendly', 'authoritative', 'marketing']).default('professional').describe('Desired tone.'),
 });
 export type ContentIdeaGeneratorInput = z.infer<typeof ContentIdeaGeneratorInputSchema>;
 
 const ContentIdea = z.object({
-  title: z.string().describe('A catchy and relevant title for the content.'),
-  shortDescription: z.string().describe('A brief, engaging description of the content idea.'),
-  draftText: z.string().describe('An initial draft or outline for the content, focusing on key points.'),
+  title: z.string().describe('A catchy title.'),
+  shortDescription: z.string().describe('A brief description.'),
+  draftText: z.string().describe('An initial draft focusing on key points.'),
 });
 
 const ContentIdeaGeneratorOutputSchema = z.object({
@@ -39,15 +35,15 @@ const prompt = ai.definePrompt({
   name: 'contentIdeaGeneratorPrompt',
   input: {schema: ContentIdeaGeneratorInputSchema},
   output: {schema: ContentIdeaGeneratorOutputSchema},
-  prompt: `You are an expert content strategist for a professional web development company named ColserDev. Your goal is to generate diverse content ideas and initial draft texts for our team members. We want to accelerate content creation and maintain consistent messaging.
+  prompt: `Eres un estratega de contenido experto para ColserDev, una empresa líder en ingeniería de software y desarrollo web profesional. Tu objetivo es generar ideas de contenido innovadoras y borradores iniciales que reflejen la excelencia técnica de ColserDev.
 
-You need to create 3-5 distinct content ideas based on the provided topic, content type, target audience, keywords, and desired tone. Ensure the ideas are innovative, professional, and relevant to modern web development trends. For each idea, provide a catchy title, a short description, and an initial draft text.
+Debes crear 3 ideas distintas basadas en los siguientes parámetros. El contenido debe estar en ESPAÑOL y mantener la identidad de marca de ColserDev.
 
-Topic: {{{topic}}}
-Content Type: {{{contentType}}}
-{{#if targetAudience}}Target Audience: {{{targetAudience}}}{{/if}}
+Tema: {{{topic}}}
+Tipo de Contenido: {{{contentType}}}
+{{#if targetAudience}}Audiencia: {{{targetAudience}}}{{/if}}
 {{#if keywords}}Keywords: {{#each keywords}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}{{/if}}
-Tone: {{{tone}}}`,
+Tono: {{{tone}}}`,
 });
 
 const contentIdeaGeneratorFlow = ai.defineFlow(
@@ -59,7 +55,7 @@ const contentIdeaGeneratorFlow = ai.defineFlow(
   async (input) => {
     const {output} = await prompt(input);
     if (!output) {
-      throw new Error('Failed to generate content ideas.');
+      throw new Error('Error al generar ideas de contenido para ColserDev.');
     }
     return output;
   }

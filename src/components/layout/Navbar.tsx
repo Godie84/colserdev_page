@@ -42,15 +42,15 @@ export function Navbar() {
             {logoData && (
               <Image 
                 src={logoData.imageUrl} 
-                alt="Logo" 
+                alt="Logo ColserDev" 
                 fill 
                 className="object-contain"
-                data-ai-hint={logoData.imageHint}
+                priority
               />
             )}
           </div>
           <span className="text-xl font-bold tracking-tight text-foreground">
-            Colser<span className="text-primary">Dev</span>Pro
+            Colser<span className="text-primary">Dev</span>
           </span>
         </Link>
 
