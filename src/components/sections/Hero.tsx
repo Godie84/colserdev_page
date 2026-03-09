@@ -20,7 +20,7 @@ export function Hero() {
           ColserDev es tu socio dedicado para el desarrollo web de alto rendimiento, soluciones móviles y computación en la nube. Escalemos tu visión con ingeniería experta.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="rounded-xl px-8 py-7 text-base bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30 group">
             Inicia tu Proyecto
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -28,21 +28,6 @@ export function Hero() {
           <Button variant="outline" size="lg" className="rounded-xl px-8 py-7 text-base border-border bg-card hover:bg-muted transition-colors">
             Ver Nuestro Trabajo
           </Button>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-border/50 max-w-3xl mx-auto opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          <div className="flex items-center justify-center font-bold text-xs tracking-[0.2em] text-foreground/60 uppercase">
-            Techstars
-          </div>
-          <div className="flex items-center justify-center font-bold text-xs tracking-[0.2em] text-foreground/60 uppercase">
-            Socio Microsoft
-          </div>
-          <div className="flex items-center justify-center font-bold text-xs tracking-[0.2em] text-foreground/60 uppercase">
-            AWS Certified
-          </div>
-          <div className="flex items-center justify-center font-bold text-xs tracking-[0.2em] text-foreground/60 uppercase">
-            Expertos React
-          </div>
         </div>
       </div>
     </section>
