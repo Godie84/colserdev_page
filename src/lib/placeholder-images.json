@@ -7,6 +7,30 @@
       "imageHint": "web development high-tech"
     },
     {
+      "id": "service-web",
+      "description": "Desarrollo web moderno con Next.js y React",
+      "imageUrl": "https://picsum.photos/seed/service-web/600/400",
+      "imageHint": "web development coding"
+    },
+    {
+      "id": "service-mobile",
+      "description": "Desarrollo de aplicaciones móviles iOS y Android",
+      "imageUrl": "https://picsum.photos/seed/service-mobile/600/400",
+      "imageHint": "mobile app development"
+    },
+    {
+      "id": "service-cloud",
+      "description": "Infraestructura de computación en la nube",
+      "imageUrl": "https://picsum.photos/seed/service-cloud/600/400",
+      "imageHint": "cloud computing server"
+    },
+    {
+      "id": "service-ai",
+      "description": "Inteligencia artificial y aprendizaje automático",
+      "imageUrl": "https://picsum.photos/seed/service-ai/600/400",
+      "imageHint": "artificial intelligence machine learning"
+    },
+    {
       "id": "project-1",
       "description": "E-commerce platform interface design",
       "imageUrl": "https://picsum.photos/seed/project1/800/600",
@@ -23,18 +47,6 @@
       "description": "Cloud computing infrastructure visualization",
       "imageUrl": "https://picsum.photos/seed/project3/800/600",
       "imageHint": "cloud tech"
-    },
-    {
-      "id": "partner-1",
-      "description": "Logo of a tech partner company",
-      "imageUrl": "https://picsum.photos/seed/partner1/200/100",
-      "imageHint": "tech logo"
-    },
-    {
-      "id": "partner-2",
-      "description": "Logo of another tech partner company",
-      "imageUrl": "https://picsum.photos/seed/partner2/200/100",
-      "imageHint": "modern logo"
     }
   ]
 }

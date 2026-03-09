@@ -1,42 +1,33 @@
-import { Code2, Smartphone, Cloud, LineChart, ShieldCheck, Globe } from "lucide-react"
+
+import Image from "next/image"
+import { Globe, Smartphone, Cloud, Cpu } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { PlaceHolderImages } from "@/lib/placeholder-images"
 
 const services = [
   {
-    title: "Custom Software",
-    description: "Tailored software solutions designed to solve your unique business challenges and streamline operations.",
-    icon: <Code2 className="w-8 h-8" />,
-    color: "bg-blue-50 text-blue-600"
+    id: "service-web",
+    title: "Desarrollo Web",
+    description: "Sitios web a medida y de alto rendimiento construidos con las últimas tecnologías (Next.js, React, Node.js). Enfocados en escalabilidad, velocidad y una experiencia de usuario excepcional.",
+    icon: <Globe className="w-5 h-5 text-white" />,
   },
   {
-    title: "Web Development",
-    description: "Modern, responsive, and SEO-optimized websites that provide exceptional user experiences and drive growth.",
-    icon: <Globe className="w-8 h-8" />,
-    color: "bg-teal-50 text-teal-600"
+    id: "service-mobile",
+    title: "Soluciones de Apps Móviles",
+    description: "Aplicaciones móviles nativas y multiplataforma que cautivan a los usuarios e impulsan el crecimiento empresarial. Construimos para iOS y Android con un enfoque en UI/UX intuitivo.",
+    icon: <Smartphone className="w-5 h-5 text-white" />,
   },
   {
-    title: "Mobile Apps",
-    description: "Native and cross-platform mobile applications that put your business in the pockets of your customers.",
-    icon: <Smartphone className="w-8 h-8" />,
-    color: "bg-purple-50 text-purple-600"
+    id: "service-cloud",
+    title: "Computación en la Nube",
+    description: "Transforma tu infraestructura con soluciones nativas de la nube. Nos especializamos en AWS, Azure y Google Cloud para asegurar que tu negocio sea resiliente y escalable.",
+    icon: <Cloud className="w-5 h-5 text-white" />,
   },
   {
-    title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure management and migration services for enhanced performance and security.",
-    icon: <Cloud className="w-8 h-8" />,
-    color: "bg-orange-50 text-orange-600"
-  },
-  {
-    title: "Data Analytics",
-    description: "Transform your raw data into actionable insights with our comprehensive BI and analytics platforms.",
-    icon: <LineChart className="w-8 h-8" />,
-    color: "bg-emerald-50 text-emerald-600"
-  },
-  {
-    title: "Cybersecurity",
-    description: "Protect your digital assets with our advanced security audits, monitoring, and compliance services.",
-    icon: <ShieldCheck className="w-8 h-8" />,
-    color: "bg-rose-50 text-rose-600"
+    id: "service-ai",
+    title: "IA y Machine Learning",
+    description: "Desbloquea el poder de tus datos con modelos de IA personalizados. Desde analítica predictiva hasta integraciones de IA generativa, te ayudamos a mantenerte a la vanguardia.",
+    icon: <Cpu className="w-5 h-5 text-white" />,
   }
 ]
 
@@ -45,30 +36,51 @@ export function Services() {
     <section id="services" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-base font-bold text-primary uppercase tracking-widest mb-4">Our Services</h2>
-          <h3 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 font-headline">Solutions We Provide</h3>
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#1e293b] mb-4 font-headline">
+            Nuestra Experiencia
+          </h2>
           <p className="text-lg text-muted-foreground">
-            We leverage cutting-edge technology to deliver innovative solutions that empower your digital transformation.
+            Soluciones integrales adaptadas a los desafíos únicos de tu negocio.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="group border-none shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden bg-card"
-            >
-              <CardContent className="p-8">
-                <div className={`${service.color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  {service.icon}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => {
+            const imageData = PlaceHolderImages.find(img => img.id === service.id)
+            return (
+              <Card 
+                key={index} 
+                className="group border-none shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden bg-card rounded-2xl"
+              >
+                <div className="relative aspect-[1.5/1] w-full overflow-hidden">
+                  {imageData && (
+                    <Image
+                      src={imageData.imageUrl}
+                      alt={imageData.description}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      data-ai-hint={imageData.imageHint}
+                    />
+                  )}
+                  {/* Icon Overlay */}
+                  <div className="absolute bottom-4 left-4">
+                    <div className="bg-primary p-2.5 rounded-full shadow-lg border-2 border-white flex items-center justify-center">
+                      {service.icon}
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-xl font-bold mb-4 text-foreground">{service.title}</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+                
+                <CardContent className="p-6 pt-8">
+                  <h4 className="text-xl font-bold mb-4 text-[#1e293b]">
+                    {service.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            )
+          })}
         </div>
       </div>
     </section>
