@@ -2,15 +2,15 @@
   "placeholderImages": [
     {
       "id": "app-logo",
-      "description": "Logotipo oficial de ColserDev Pro",
+      "description": "Logotipo oficial de ColserDev",
       "imageUrl": "/Logo.png",
       "imageHint": "company logo"
     },
     {
-      "id": "hero-image",
-      "description": "Equipo de desarrollo trabajando en soluciones tecnológicas",
-      "imageUrl": "https://picsum.photos/seed/colser-hero/1200/800",
-      "imageHint": "software engineering team"
+      "id": "hero-mockup",
+      "description": "Interfaz de software moderna e inteligente",
+      "imageUrl": "https://picsum.photos/seed/colser-dashboard/1200/800",
+      "imageHint": "software dashboard"
     },
     {
       "id": "service-web",
