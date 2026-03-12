@@ -27,7 +27,7 @@
     {
       "id": "service-cloud",
       "description": "Infraestructura en la nube",
-      "imageUrl": "https://picsum.photos/seed/service-cloud-dev/600/400",
+      "imageUrl": "/images/servicios/cloud.jpg",
       "imageHint": "cloud server technology"
     },
     {
