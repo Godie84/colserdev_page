@@ -1,37 +1,39 @@
-# 🚀 Guía de Despliegue ColserDev v1.0.0
 
-Sigue estos pasos para publicar tu sitio en **Firebase App Hosting** usando tu repositorio de GitHub.
+# 🚀 Guía de Despliegue ColserDev (Hosting Gratuito)
+
+Sigue estos pasos para publicar tu sitio en el **Hosting Gratuito (Plan Spark)** de Firebase.
 
 ## 1. Descarga el Código
-Primero, descarga el proyecto desde Firebase Studio a tu computadora y abre la carpeta en tu terminal o VS Code.
+Descarga el proyecto desde Firebase Studio a tu computadora.
 
-## 2. Sube el Código a GitHub
-Ejecuta estos comandos en tu terminal local (uno por uno):
+## 2. Preparación Local
+Abre una terminal en la carpeta del proyecto y ejecuta:
 
 ```bash
-# Inicializar git
-git init
+# Instalar herramientas de Firebase si no las tienes
+npm install -g firebase-tools
 
-# Conectar con tu repositorio
-git remote add origin https://github.com/Godie84/colserdev_page.git
+# Iniciar sesión en Firebase
+firebase login
 
-# Preparar y subir archivos
-git add .
-git commit -m "Lanzamiento oficial ColserDev"
-git branch -M main
-git push -u origin main
+# Inicializar el proyecto (selecciona tu ID de proyecto actual)
+firebase use --add
 ```
 
-## 3. Configura Firebase App Hosting (Consola Web)
-1. Ve a [Firebase Console](https://console.firebase.google.com/).
-2. Selecciona tu proyecto.
-3. Ve a **Build** > **App Hosting**.
-4. Haz clic en **Comenzar** y conecta tu cuenta de GitHub.
-5. Selecciona el repositorio `Godie84/colserdev_page`.
-6. Mantén la configuración por defecto (Next.js) y haz clic en **Finalizar y Desplegar**.
+## 3. Construcción y Despliegue
+Ejecuta el siguiente comando para generar los archivos estáticos y subirlos:
 
-## 4. Dominio Personalizado
-Una vez desplegado, ve a **Settings** en App Hosting y agrega `www.colserdev.com` en la sección **Custom Domains**.
+```bash
+npm run deploy
+```
+
+## 4. Nota sobre funcionalidades
+Al ser un **Hosting Gratuito Estático**:
+- ✅ La web, el formulario de contacto y el botón de WhatsApp funcionarán al 100%.
+- ⚠️ Las herramientas de IA (`/admin/content-tool`) no funcionarán ya que requieren un servidor activo (Plan Blaze).
+
+## 5. Dominio Personalizado
+En la consola de Firebase, ve a **Hosting** y agrega `www.colserdev.com`. Sigue los pasos de validación TXT/A que te indiquen.
 
 ---
 © 2024 ColserDev. Todos los derechos reservados.

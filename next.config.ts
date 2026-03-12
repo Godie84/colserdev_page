@@ -2,7 +2,7 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-
+  output: 'export', // Habilita la exportación estática para el hosting gratuito
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: true, // Requerido para output: 'export'
     remotePatterns: [
       {
         protocol: 'https',
@@ -32,7 +32,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Optimización de headers de seguridad para producción
   async headers() {
     return [
       {
