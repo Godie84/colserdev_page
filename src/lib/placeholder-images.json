@@ -33,7 +33,7 @@
     {
       "id": "service-custom",
       "description": "Desarrollo de software a la medida para empresas",
-      "imageUrl": "https://picsum.photos/seed/service-custom-software/600/400",
+      "imageUrl": "/images/servicios/software.jpg",
       "imageHint": "software engineering code"
     },
     {
