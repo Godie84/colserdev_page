@@ -83,7 +83,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>© 2024 ColserDev. Todos los derechos reservados.</p>
+          <p>© 2025 ColserDev. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

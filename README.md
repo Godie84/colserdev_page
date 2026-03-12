@@ -32,4 +32,4 @@ Al usar Vercel, las herramientas de IA en `/admin/content-tool` **funcionarán c
    ```
 
 ---
-© 2024 ColserDev. Todos los derechos reservados.
+© 2025 ColserDev. Todos los derechos reservados.
