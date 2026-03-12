@@ -1,6 +1,6 @@
-
 "use client"
 
+import * as React from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -17,7 +17,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
-import { Send } from "lucide-react"
+import { Send, Loader2 } from "lucide-react"
+import { submitContactForm } from "@/app/actions/contact"
 
 const formSchema = z.object({
   name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
@@ -28,6 +29,8 @@ const formSchema = z.object({
 
 export function ContactForm() {
   const { toast } = useToast()
+  const [isPending, setIsPending] = React.useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,13 +41,33 @@ export function ContactForm() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    toast({
-      title: "¡Éxito!",
-      description: "Tu consulta ha sido enviada. Nos pondremos en contacto pronto.",
-    })
-    form.reset()
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsPending(true)
+    try {
+      const result = await submitContactForm(values)
+      
+      if (result.success) {
+        toast({
+          title: "¡Consulta enviada!",
+          description: "Hemos recibido tu información. Nos pondremos en contacto pronto.",
+        })
+        form.reset()
+      } else {
+        toast({
+          title: "Error",
+          description: result.error || "Algo salió mal. Por favor intenta de nuevo.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "Error de conexión",
+        description: "No pudimos conectar con el servidor. Revisa tu internet.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsPending(false)
+    }
   }
 
   return (
@@ -100,7 +123,7 @@ export function ContactForm() {
                       <FormItem>
                         <FormLabel>Nombre</FormLabel>
                         <FormControl>
-                          <Input placeholder="Juan Pérez" {...field} className="bg-muted/50" />
+                          <Input placeholder="Juan Pérez" {...field} className="bg-muted/50" disabled={isPending} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -113,7 +136,7 @@ export function ContactForm() {
                       <FormItem>
                         <FormLabel>Correo Electrónico</FormLabel>
                         <FormControl>
-                          <Input placeholder="juan@ejemplo.com" {...field} className="bg-muted/50" />
+                          <Input placeholder="juan@ejemplo.com" {...field} className="bg-muted/50" disabled={isPending} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -127,7 +150,7 @@ export function ContactForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Tipo de Proyecto</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isPending}>
                         <FormControl>
                           <SelectTrigger className="bg-muted/50">
                             <SelectValue placeholder="Selecciona un servicio" />
@@ -156,6 +179,7 @@ export function ContactForm() {
                           placeholder="Objetivos del proyecto, plazos, requisitos específicos..." 
                           className="min-h-[120px] bg-muted/50"
                           {...field} 
+                          disabled={isPending}
                         />
                       </FormControl>
                       <FormMessage />
@@ -163,9 +187,22 @@ export function ContactForm() {
                   )}
                 />
 
-                <Button type="submit" className="w-full py-7 text-lg bg-primary hover:bg-primary/90 rounded-xl shadow-lg shadow-primary/20 group">
-                  Enviar Consulta
-                  <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <Button 
+                  type="submit" 
+                  className="w-full py-7 text-lg bg-primary hover:bg-primary/90 rounded-xl shadow-lg shadow-primary/20 group"
+                  disabled={isPending}
+                >
+                  {isPending ? (
+                    <>
+                      Enviando...
+                      <Loader2 className="ml-2 w-5 h-5 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Enviar Consulta
+                      <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </>
+                  )}
                 </Button>
               </form>
             </Form>
