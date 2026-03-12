@@ -2,7 +2,7 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  output: 'export', // Habilita la exportación estática para el hosting gratuito
+  // Eliminamos 'output: export' para que Vercel pueda ejecutar Server Actions y funciones de IA
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true, // Requerido para hosting estático
     remotePatterns: [
       {
         protocol: 'https',
