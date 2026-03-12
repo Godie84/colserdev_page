@@ -11,23 +11,23 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 const testimonials = [
   {
     id: "testimonial-1",
-    quote: "ColserDev transformó nuestra visión en una realidad. Su experiencia técnica y compromiso con la calidad no tienen rival en la industria.",
-    author: "Sarah Johnson",
-    role: "CEO de InnovateX",
+    quote: "El Sistema Médico de ColserDev revolucionó nuestra clínica. La trazabilidad de pacientes y la generación automática de reportes nos ahorran horas de trabajo administrativo cada semana.",
+    author: "Dr. Alejandro Rivas",
+    role: "Director Médico",
     avatarId: "avatar-1"
   },
   {
     id: "testimonial-2",
-    quote: "El equipo de ColserDev entregó nuestro proyecto de migración a la nube antes de lo previsto y con cero tiempo de inactividad. Muy recomendable para soluciones empresariales.",
-    author: "Michael Chen",
-    role: "CTO de CloudBase",
+    quote: "Nuestra Tienda Virtual construida con .NET es increíblemente robusta. La gestión de inventario y ventas en línea nos ha permitido escalar nuestro negocio a nivel nacional.",
+    author: "Carlos Fuentes",
+    role: "Gerente de E-commerce",
     avatarId: "avatar-2"
   },
   {
     id: "testimonial-3",
-    quote: "Trabajar con ColserDev fue un placer. Entendieron perfectamente nuestros complejos requisitos para una plataforma tecnológica sostenible.",
-    author: "Elena Rodriguez",
-    role: "Fundadora de GreenStep",
+    quote: "Para el Supermercado Antojitos, el sistema de ventas y reportes fue un cambio total. Ahora tenemos control absoluto de nuestros productos y cierres de caja exactos.",
+    author: "Martha Lucía",
+    role: "Propietaria de Antojitos",
     avatarId: "avatar-3"
   }
 ]
