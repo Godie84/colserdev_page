@@ -31,10 +31,10 @@
       "imageHint": "cloud server technology"
     },
     {
-      "id": "service-ai",
-      "description": "Inteligencia Artificial avanzada",
-      "imageUrl": "https://picsum.photos/seed/service-ai-tech/600/400",
-      "imageHint": "artificial intelligence neural"
+      "id": "service-custom",
+      "description": "Desarrollo de software a la medida",
+      "imageUrl": "https://picsum.photos/seed/service-custom-software/600/400",
+      "imageHint": "software engineering code"
     },
     {
       "id": "project-1",

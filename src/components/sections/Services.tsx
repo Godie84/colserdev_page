@@ -1,6 +1,5 @@
-
 import Image from "next/image"
-import { Globe, Smartphone, Cloud, Cpu } from "lucide-react"
+import { Globe, Smartphone, Cloud, Code } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { PlaceHolderImages } from "@/lib/placeholder-images"
 
@@ -24,10 +23,10 @@ const services = [
     icon: <Cloud className="w-5 h-5 text-white" />,
   },
   {
-    id: "service-ai",
-    title: "IA y Machine Learning",
-    description: "Desbloquea el poder de tus datos con modelos de IA personalizados. Desde analítica predictiva hasta integraciones de IA generativa, te ayudamos a mantenerte a la vanguardia.",
-    icon: <Cpu className="w-5 h-5 text-white" />,
+    id: "service-custom",
+    title: "Software a la Medida",
+    description: "Creamos soluciones robustas diseñadas exclusivamente para satisfacer las necesidades específicas de tu negocio. Maximizamos la eficiencia mediante ingeniería de software personalizada.",
+    icon: <Code className="w-5 h-5 text-white" />,
   }
 ]
 
@@ -58,6 +57,7 @@ export function Services() {
                       src={imageData.imageUrl}
                       alt={imageData.description}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 300px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       data-ai-hint={imageData.imageHint}
                     />
