@@ -64,7 +64,7 @@ export function Footer() {
             <ul className="space-y-6 text-slate-400">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
-                <span>Centro de Innovación Tecnológica, LATAM</span>
+                <span>Centro Comercial Santafé, Bogotá</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
