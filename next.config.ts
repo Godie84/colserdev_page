@@ -1,8 +1,7 @@
-
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  // Eliminamos 'output: export' para que Vercel pueda ejecutar Server Actions y funciones de IA
+  // Configuración optimizada para Vercel con soporte de Server Actions e IA
   typescript: {
     ignoreBuildErrors: true,
   },
