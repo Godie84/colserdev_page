@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -12,21 +13,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.colserdev.com'),
-  title: 'ColserDev | Ingeniería de Software y Soluciones Digitales de Alto Impacto',
-  description: 'En ColserDev diseñamos y construimos software inteligente, aplicaciones móviles y soluciones cloud a medida para empresas visionarias.',
-  keywords: ['Desarrollo de Software', 'ColserDev', 'Ingeniería Web', 'Apps Móviles', 'Cloud Computing', 'IA', 'Latinoamérica'],
-  authors: [{ name: 'ColserDev' }],
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'es_CO',
-    url: 'https://www.colserdev.com',
-    title: 'ColserDev | Ingeniería de Software Profesional',
-    description: 'Soluciones digitales de alto impacto para empresas visionarias.',
-    siteName: 'ColserDev',
-  },
+  title: 'ColserDev | Ingeniería de Software Profesional',
+  description: 'Diseñamos y construimos software inteligente y aplicaciones móviles de alto impacto.',
+  keywords: ['Desarrollo Web', 'Software', 'Apps Móviles', 'IA', 'ColserDev'],
 };
 
 export const viewport: Viewport = {
@@ -37,12 +26,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="es" className={`${inter.variable} scroll-smooth`}>
-      <body className="font-body antialiased selection:bg-primary selection:text-white bg-background text-foreground">
+      <body className="font-body antialiased bg-background text-foreground">
         {children}
         <WhatsAppButton />
         <Toaster />
