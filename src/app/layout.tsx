@@ -1,16 +1,23 @@
-import type {Metadata, Viewport} from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { WhatsAppButton } from '@/components/ui/whatsapp-button';
+import { Toaster } from "@/components/ui/toaster";
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.colserdev.com'),
   title: 'ColserDev | Ingeniería de Software y Soluciones Digitales de Alto Impacto',
-  description: 'En ColserDev diseñamos y construimos software inteligente, aplicaciones móviles y soluciones cloud a medida para empresas visionarias. Transformamos tecnología en resultados.',
+  description: 'En ColserDev diseñamos y construimos software inteligente, aplicaciones móviles y soluciones cloud a medida para empresas visionarias.',
   keywords: ['Desarrollo de Software', 'ColserDev', 'Ingeniería Web', 'Apps Móviles', 'Cloud Computing', 'IA', 'Latinoamérica'],
   authors: [{ name: 'ColserDev' }],
-  robots: 'index, follow',
   alternates: {
-    canonical: 'https://www.colserdev.com',
+    canonical: '/',
   },
   openGraph: {
     type: 'website',
@@ -25,6 +32,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#1F8EFC',
 };
 
 export default function RootLayout({
@@ -33,15 +41,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="es" className={`${inter.variable} scroll-smooth`}>
       <body className="font-body antialiased selection:bg-primary selection:text-white bg-background text-foreground">
         {children}
         <WhatsAppButton />
+        <Toaster />
       </body>
     </html>
   );

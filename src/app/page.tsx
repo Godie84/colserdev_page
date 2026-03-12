@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/layout/Navbar"
 import { Hero } from "@/components/sections/Hero"
 import { Services } from "@/components/sections/Services"
@@ -7,11 +6,10 @@ import { Testimonials } from "@/components/sections/Testimonials"
 import { CTA } from "@/components/sections/CTA"
 import { ContactForm } from "@/components/sections/ContactForm"
 import { Footer } from "@/components/layout/Footer"
-import { Toaster } from "@/components/ui/toaster"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen flex flex-col">
       <Navbar />
       <Hero />
       <Services />
@@ -20,7 +18,6 @@ export default function Home() {
       <CTA />
       <ContactForm />
       <Footer />
-      <Toaster />
     </main>
   )
 }

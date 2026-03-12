@@ -7,7 +7,7 @@ export function Footer() {
   const logoData = PlaceHolderImages.find(img => img.id === "app-logo")
 
   return (
-    <footer className="bg-foreground text-background py-20">
+    <footer className="bg-[#1e293b] text-white py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
@@ -23,47 +23,45 @@ export function Footer() {
                   />
                 )}
               </div>
-              <span className="text-2xl font-bold tracking-tight text-white">
+              <span className="text-2xl font-bold tracking-tight">
                 Colser<span className="text-primary">Dev</span>
               </span>
             </Link>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-slate-400 leading-relaxed">
               En ColserDev, diseñamos y construimos soluciones digitales de alto impacto que impulsan el crecimiento de empresas visionarias en toda la región.
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <Link key={i} href="#" className="w-10 h-10 rounded-full border border-muted-foreground/30 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300 group">
-                  <Icon className="w-5 h-5 text-muted-foreground group-hover:text-white transition-colors" />
+                <Link key={i} href="#" className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300 group">
+                  <Icon className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
                 </Link>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="text-xl font-bold mb-6 text-white">Servicios</h4>
-            <ul className="space-y-4 text-muted-foreground">
+            <h4 className="text-xl font-bold mb-6">Servicios</h4>
+            <ul className="space-y-4 text-slate-400">
               <li><Link href="#services" className="hover:text-primary transition-colors">Desarrollo Web</Link></li>
               <li><Link href="#services" className="hover:text-primary transition-colors">Aplicaciones Móviles</Link></li>
               <li><Link href="#services" className="hover:text-primary transition-colors">Software a Medida</Link></li>
               <li><Link href="#services" className="hover:text-primary transition-colors">Soluciones Cloud</Link></li>
-              <li><Link href="#services" className="hover:text-primary transition-colors">IA & Machine Learning</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xl font-bold mb-6 text-white">Empresa</h4>
-            <ul className="space-y-4 text-muted-foreground">
+            <h4 className="text-xl font-bold mb-6">Empresa</h4>
+            <ul className="space-y-4 text-slate-400">
               <li><Link href="#" className="hover:text-primary transition-colors">Sobre Nosotros</Link></li>
               <li><Link href="#projects" className="hover:text-primary transition-colors">Portafolio</Link></li>
-              <li><Link href="#testimonials" className="hover:text-primary transition-colors">Testimonios</Link></li>
               <li><Link href="#contact" className="hover:text-primary transition-colors">Contacto</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Política de Privacidad</Link></li>
+              <li><Link href="#" className="hover:text-primary transition-colors">Privacidad</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xl font-bold mb-6 text-white">Contacto</h4>
-            <ul className="space-y-6 text-muted-foreground">
+            <h4 className="text-xl font-bold mb-6">Contacto</h4>
+            <ul className="space-y-6 text-slate-400">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
                 <span>Centro de Innovación Tecnológica, LATAM</span>
@@ -84,12 +82,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-muted-foreground/20 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>© 2024 ColserDev. Todos los derechos reservados.</p>
-          <div className="flex gap-8">
-            <Link href="#" className="hover:text-primary transition-colors">Términos de Uso</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Cookies</Link>
-          </div>
         </div>
       </div>
     </footer>
