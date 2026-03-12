@@ -1,3 +1,4 @@
+
 import Image from "next/image"
 import { Globe, Smartphone, Cloud, Code } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -12,20 +13,20 @@ const services = [
   },
   {
     id: "service-mobile",
-    title: "Soluciones de Apps Móviles",
+    title: "Apps Móviles",
     description: "Aplicaciones móviles nativas y multiplataforma que cautivan a los usuarios e impulsan el crecimiento empresarial. Construimos para iOS y Android con un enfoque en UI/UX intuitivo.",
     icon: <Smartphone className="w-5 h-5 text-white" />,
   },
   {
     id: "service-cloud",
-    title: "Computación en la Nube",
+    title: "Soluciones Cloud",
     description: "Transforma tu infraestructura con soluciones nativas de la nube. Nos especializamos en AWS, Azure y Google Cloud para asegurar que tu negocio sea resiliente y escalable.",
     icon: <Cloud className="w-5 h-5 text-white" />,
   },
   {
     id: "service-custom",
     title: "Software a la Medida",
-    description: "Creamos soluciones robustas diseñadas exclusivamente para satisfacer las necesidades específicas de tu negocio. Maximizamos la eficiencia mediante ingeniería de software personalizada.",
+    description: "Diseñamos y desarrollamos soluciones de software exclusivas para optimizar los procesos críticos de tu empresa. Ingeniería robusta que escala con tus necesidades de negocio.",
     icon: <Code className="w-5 h-5 text-white" />,
   }
 ]
@@ -39,7 +40,7 @@ export function Services() {
             Nuestra Experiencia
           </h2>
           <p className="text-lg text-muted-foreground">
-            Soluciones integrales adaptadas a los desafíos únicos de tu negocio.
+            Soluciones integrales de ingeniería adaptadas a los desafíos únicos de tu negocio.
           </p>
         </div>
 
@@ -49,9 +50,9 @@ export function Services() {
             return (
               <Card 
                 key={index} 
-                className="group border-none shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden bg-card rounded-2xl"
+                className="group border-none shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden bg-card rounded-2xl flex flex-col h-full"
               >
-                <div className="relative aspect-[1.5/1] w-full overflow-hidden">
+                <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0">
                   {imageData && (
                     <Image
                       src={imageData.imageUrl}
@@ -60,21 +61,24 @@ export function Services() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 300px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       data-ai-hint={imageData.imageHint}
+                      priority={index < 2}
                     />
                   )}
                   {/* Icon Overlay */}
-                  <div className="absolute bottom-4 left-4">
+                  <div className="absolute bottom-4 left-4 z-10">
                     <div className="bg-primary p-2.5 rounded-full shadow-lg border-2 border-white flex items-center justify-center">
                       {service.icon}
                     </div>
                   </div>
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
-                <CardContent className="p-6 pt-8">
+                <CardContent className="p-6 pt-8 flex flex-col flex-grow">
                   <h4 className="text-xl font-bold mb-4 text-[#1e293b]">
                     {service.title}
                   </h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
                     {service.description}
                   </p>
                 </CardContent>
