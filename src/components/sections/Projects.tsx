@@ -44,13 +44,13 @@ const projects = [
     images: ["catalog-login", "catalog-panel", "catalog-product"]
   },
   {
-    id: "project-3",
-    title: "VitalTrack Health Monitor",
-    category: "mobile",
-    categoryName: "MOBILE APP",
-    description: "Aplicación intuitiva de seguimiento de salud que se conecta con dispositivos vestibles para proporcionar información de bienestar.",
-    tags: ["React Native", "AWS Amplify", "Redux"],
-    images: ["project-3-1", "project-3-2", "project-3-3"]
+    id: "project-supermarket",
+    title: "Sistema Gestión Supermercado",
+    category: "web",
+    categoryName: "WEB APPLICATION",
+    description: "Sistema de gestión de productos, ventas y reportes para supermercado Antojitos. Desarrollado con C#, .Net y SQL Server.",
+    tags: ["C#", ".NET", "SQL Server", "WinForms"],
+    images: ["supermarket-login", "supermarket-reports", "supermarket-sales"]
   }
 ]
 

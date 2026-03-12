@@ -73,22 +73,22 @@
       "imageHint": "ecommerce products"
     },
     {
-      "id": "project-3-1",
-      "description": "Health View 1",
-      "imageUrl": "https://picsum.photos/seed/health1/800/600",
-      "imageHint": "medical app"
+      "id": "supermarket-login",
+      "description": "Sistema Supermercado - Login",
+      "imageUrl": "/images/proyectos/supermercado/Login.png",
+      "imageHint": "supermarket login"
     },
     {
-      "id": "project-3-2",
-      "description": "Health View 2",
-      "imageUrl": "https://picsum.photos/seed/health2/800/600",
-      "imageHint": "doctor dashboard"
+      "id": "supermarket-reports",
+      "description": "Sistema Supermercado - Reportes",
+      "imageUrl": "/images/proyectos/supermercado/Reportes.png",
+      "imageHint": "supermarket reports dashboard"
     },
     {
-      "id": "project-3-3",
-      "description": "Health View 3",
-      "imageUrl": "https://picsum.photos/seed/health3/800/600",
-      "imageHint": "patient tracking"
+      "id": "supermarket-sales",
+      "description": "Sistema Supermercado - Ventas",
+      "imageUrl": "/images/proyectos/supermercado/Venta.png",
+      "imageHint": "supermarket sales interface"
     },
     {
       "id": "avatar-1",
