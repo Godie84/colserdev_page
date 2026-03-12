@@ -55,22 +55,22 @@
       "imageHint": "nursing clinical record"
     },
     {
-      "id": "project-2-1",
-      "description": "Ecommerce View 1",
-      "imageUrl": "https://picsum.photos/seed/eco1/800/600",
-      "imageHint": "online store"
+      "id": "catalog-login",
+      "description": "Tienda Virtual - Login",
+      "imageUrl": "/images/proyectos/catalogo/catalogo_login.png",
+      "imageHint": "ecommerce login"
     },
     {
-      "id": "project-2-2",
-      "description": "Ecommerce View 2",
-      "imageUrl": "https://picsum.photos/seed/eco2/800/600",
-      "imageHint": "product catalog"
+      "id": "catalog-panel",
+      "description": "Tienda Virtual - Panel de Administración",
+      "imageUrl": "/images/proyectos/catalogo/catalogo_panel.png",
+      "imageHint": "ecommerce admin panel"
     },
     {
-      "id": "project-2-3",
-      "description": "Ecommerce View 3",
-      "imageUrl": "https://picsum.photos/seed/eco3/800/600",
-      "imageHint": "checkout process"
+      "id": "catalog-product",
+      "description": "Tienda Virtual - Catálogo de Productos",
+      "imageUrl": "/images/proyectos/catalogo/producto_catalogo.png",
+      "imageHint": "ecommerce products"
     },
     {
       "id": "project-3-1",

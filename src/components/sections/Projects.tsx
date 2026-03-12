@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -34,13 +35,13 @@ const projects = [
     images: ["medical-login", "medical-patient", "medical-nursing"]
   },
   {
-    id: "project-2",
-    title: "LuxeCart E-commerce",
+    id: "project-catalog",
+    title: "Tienda Virtual",
     category: "ecommerce",
     categoryName: "E-COMMERCE",
-    description: "Experiencia de compra de alta gama con checkout fluido, gestión de inventario y recomendaciones personalizadas.",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    images: ["project-2-1", "project-2-2", "project-2-3"]
+    description: "Tienda virtual de productos en linea desarrollado con C# .NET, SQL Server para una gestión robusta de inventario y ventas.",
+    tags: ["C#", ".NET", "SQL Server", "Bootstrap"],
+    images: ["catalog-login", "catalog-panel", "catalog-product"]
   },
   {
     id: "project-3",
