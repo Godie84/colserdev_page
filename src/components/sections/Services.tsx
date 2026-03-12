@@ -1,4 +1,3 @@
-
 import Image from "next/image"
 import { Globe, Smartphone, Cloud, Code } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -52,7 +51,7 @@ export function Services() {
                 key={index} 
                 className="group border-none shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden bg-card rounded-2xl flex flex-col h-full"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0">
+                <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0 bg-muted">
                   {imageData && (
                     <Image
                       src={imageData.imageUrl}

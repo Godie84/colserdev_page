@@ -20,9 +20,9 @@
     },
     {
       "id": "service-mobile",
-      "description": "Apps móviles nativas",
-      "imageUrl": "https://picsum.photos/seed/service-mobile-dev/600/400",
-      "imageHint": "mobile application"
+      "description": "Apps móviles nativas y multiplataforma",
+      "imageUrl": "/images/servicios/app_movil.jpg",
+      "imageHint": "mobile application development"
     },
     {
       "id": "service-cloud",
