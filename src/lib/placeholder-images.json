@@ -37,22 +37,22 @@
       "imageHint": "software engineering code"
     },
     {
-      "id": "project-1-1",
-      "description": "Fintech View 1",
-      "imageUrl": "https://picsum.photos/seed/fin1/800/600",
-      "imageHint": "financial dashboard"
+      "id": "medical-login",
+      "description": "Sistema Médico - Pantalla de Login",
+      "imageUrl": "/images/proyectos/medico/Login.png",
+      "imageHint": "medical login screen"
     },
     {
-      "id": "project-1-2",
-      "description": "Fintech View 2",
-      "imageUrl": "https://picsum.photos/seed/fin2/800/600",
-      "imageHint": "charts analytics"
+      "id": "medical-patient",
+      "description": "Sistema Médico - Registro de Pacientes",
+      "imageUrl": "/images/proyectos/medico/Reg_paciente.png",
+      "imageHint": "patient registration form"
     },
     {
-      "id": "project-1-3",
-      "description": "Fintech View 3",
-      "imageUrl": "https://picsum.photos/seed/fin3/800/600",
-      "imageHint": "mobile banking"
+      "id": "medical-nursing",
+      "description": "Sistema Médico - Registro de Enfermería",
+      "imageUrl": "/images/proyectos/medico/reg_enfermeria.png",
+      "imageHint": "nursing clinical record"
     },
     {
       "id": "project-2-1",

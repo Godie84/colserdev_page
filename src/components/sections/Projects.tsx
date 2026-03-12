@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -26,13 +25,13 @@ const categories = [
 
 const projects = [
   {
-    id: "project-1",
-    title: "SwiftPay Fintech Dashboard",
+    id: "project-medical",
+    title: "Sistema Médico",
     category: "web",
     categoryName: "WEB APPLICATION",
-    description: "Una herramienta integral de gestión financiera con visualización de datos en tiempo real y procesamiento de pagos seguros.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
-    images: ["project-1-1", "project-1-2", "project-1-3"]
+    description: "Sistema médico con trazabilidad de pacientes, gestión de usuarios y generación de reportes clínicos detallados.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+    images: ["medical-login", "medical-patient", "medical-nursing"]
   },
   {
     id: "project-2",
@@ -68,7 +67,6 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header and Filters */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-16">
           <div className="max-w-xl">
             <h2 className="text-4xl font-bold text-foreground mb-4 font-headline">
@@ -108,7 +106,6 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <Card key={project.id} className="group overflow-hidden border border-border/40 shadow-sm bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 rounded-2xl">
