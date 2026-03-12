@@ -37,22 +37,58 @@
       "imageHint": "software engineering code"
     },
     {
-      "id": "project-1",
-      "description": "Dashboard de Fintech",
-      "imageUrl": "https://picsum.photos/seed/project-fintech/800/600",
-      "imageHint": "financial dashboard ui"
+      "id": "project-1-1",
+      "description": "Fintech View 1",
+      "imageUrl": "https://picsum.photos/seed/fin1/800/600",
+      "imageHint": "financial dashboard"
     },
     {
-      "id": "project-2",
-      "description": "Plataforma E-commerce",
-      "imageUrl": "https://picsum.photos/seed/project-ecommerce/800/600",
-      "imageHint": "online shopping platform"
+      "id": "project-1-2",
+      "description": "Fintech View 2",
+      "imageUrl": "https://picsum.photos/seed/fin2/800/600",
+      "imageHint": "charts analytics"
     },
     {
-      "id": "project-3",
-      "description": "Monitor de Salud VitalTrack",
-      "imageUrl": "https://picsum.photos/seed/project-health/800/600",
-      "imageHint": "medical health app"
+      "id": "project-1-3",
+      "description": "Fintech View 3",
+      "imageUrl": "https://picsum.photos/seed/fin3/800/600",
+      "imageHint": "mobile banking"
+    },
+    {
+      "id": "project-2-1",
+      "description": "Ecommerce View 1",
+      "imageUrl": "https://picsum.photos/seed/eco1/800/600",
+      "imageHint": "online store"
+    },
+    {
+      "id": "project-2-2",
+      "description": "Ecommerce View 2",
+      "imageUrl": "https://picsum.photos/seed/eco2/800/600",
+      "imageHint": "product catalog"
+    },
+    {
+      "id": "project-2-3",
+      "description": "Ecommerce View 3",
+      "imageUrl": "https://picsum.photos/seed/eco3/800/600",
+      "imageHint": "checkout process"
+    },
+    {
+      "id": "project-3-1",
+      "description": "Health View 1",
+      "imageUrl": "https://picsum.photos/seed/health1/800/600",
+      "imageHint": "medical app"
+    },
+    {
+      "id": "project-3-2",
+      "description": "Health View 2",
+      "imageUrl": "https://picsum.photos/seed/health2/800/600",
+      "imageHint": "doctor dashboard"
+    },
+    {
+      "id": "project-3-3",
+      "description": "Health View 3",
+      "imageUrl": "https://picsum.photos/seed/health3/800/600",
+      "imageHint": "patient tracking"
     },
     {
       "id": "avatar-1",

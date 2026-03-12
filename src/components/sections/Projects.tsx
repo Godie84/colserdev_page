@@ -8,6 +8,13 @@ import { PlaceHolderImages } from "@/lib/placeholder-images"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
 
 const categories = [
@@ -24,7 +31,8 @@ const projects = [
     category: "web",
     categoryName: "WEB APPLICATION",
     description: "Una herramienta integral de gestión financiera con visualización de datos en tiempo real y procesamiento de pagos seguros.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"]
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
+    images: ["project-1-1", "project-1-2", "project-1-3"]
   },
   {
     id: "project-2",
@@ -32,7 +40,8 @@ const projects = [
     category: "ecommerce",
     categoryName: "E-COMMERCE",
     description: "Experiencia de compra de alta gama con checkout fluido, gestión de inventario y recomendaciones personalizadas.",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"]
+    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    images: ["project-2-1", "project-2-2", "project-2-3"]
   },
   {
     id: "project-3",
@@ -40,7 +49,8 @@ const projects = [
     category: "mobile",
     categoryName: "MOBILE APP",
     description: "Aplicación intuitiva de seguimiento de salud que se conecta con dispositivos vestibles para proporcionar información de bienestar.",
-    tags: ["React Native", "AWS Amplify", "Redux"]
+    tags: ["React Native", "AWS Amplify", "Redux"],
+    images: ["project-3-1", "project-3-2", "project-3-3"]
   }
 ]
 
@@ -65,7 +75,7 @@ export function Projects() {
               Proyectos Destacados
             </h2>
             <p className="text-lg text-muted-foreground">
-              Observa el impacto de nuestras transformaciones digitales.
+              Observa el impacto de nuestras transformaciones digitales a través de múltiples perspectivas.
             </p>
           </div>
 
@@ -100,42 +110,54 @@ export function Projects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => {
-            const imageData = PlaceHolderImages.find(img => img.id === project.id)
-            return (
-              <Card key={project.id} className="group overflow-hidden border border-border/40 shadow-sm bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 rounded-2xl">
-                <div className="relative aspect-video overflow-hidden">
-                  {imageData && (
-                    <Image
-                      src={imageData.imageUrl}
-                      alt={imageData.description}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      data-ai-hint={imageData.imageHint}
-                    />
-                  )}
+          {filteredProjects.map((project) => (
+            <Card key={project.id} className="group overflow-hidden border border-border/40 shadow-sm bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 rounded-2xl">
+              <div className="relative">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {project.images.map((imgId, index) => {
+                      const imageData = PlaceHolderImages.find(img => img.id === imgId)
+                      return (
+                        <CarouselItem key={index}>
+                          <div className="relative aspect-video overflow-hidden">
+                            {imageData && (
+                              <Image
+                                src={imageData.imageUrl}
+                                alt={imageData.description}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-ai-hint={imageData.imageHint}
+                              />
+                            )}
+                          </div>
+                        </CarouselItem>
+                      )
+                    })}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white text-foreground border-none h-8 w-8" />
+                  <CarouselNext className="right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white text-foreground border-none h-8 w-8" />
+                </Carousel>
+              </div>
+              <CardContent className="p-7">
+                <div className="text-[10px] font-bold tracking-[0.15em] text-primary mb-3 uppercase">
+                  {project.categoryName}
                 </div>
-                <CardContent className="p-7">
-                  <div className="text-[10px] font-bold tracking-[0.15em] text-primary mb-3 uppercase">
-                    {project.categoryName}
-                  </div>
-                  <h4 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h4>
-                  <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] font-semibold text-muted-foreground bg-muted/40 border border-border/50 px-3 py-1 rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )
-          })}
+                <h4 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                  {project.title}
+                </h4>
+                <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="text-[10px] font-semibold text-muted-foreground bg-muted/40 border border-border/50 px-3 py-1 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {filteredProjects.length === 0 && (
