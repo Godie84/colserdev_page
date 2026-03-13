@@ -1,34 +1,48 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Dependencias
+node_modules/
 
-# testing
-/coverage
+# Build
+.next/
+out/
+build/
+dist/
 
-# next.js
-/.next/
-/out/
+# Firebase
+.firebase/
+.firebase/*.cache
 
-# production
-/build
+# Firebase Functions
+functions/node_modules/
+functions/lib/
+functions/.runtimeconfig.json
 
-# misc
-.DS_Store
-*.pem
+# Entorno
+.env
+.env.local
+.env.*.local
 
-# debug
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env*.local
-.env
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
 
-# vercel
-.vercel
-
-# typescript
+# Next.js
+.next/
 *.tsbuildinfo
 next-env.d.ts
+
+# Archivos temporales
+.modified
+.temp
+.cache
+
+# IDX (si es de Google IDX - desarrollo local)
+.idx/
